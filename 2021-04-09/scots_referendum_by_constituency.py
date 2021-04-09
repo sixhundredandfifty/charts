@@ -34,11 +34,6 @@ table_dict={'KS102SC':'age','KS204SC':'birth_country','KS611SC':'occupation','KS
 
 df_dict= {value: pd.read_csv(key+'.csv') for key, value in table_dict.items()}
 
-# Separately read in benefit claimant data, since this is in a different format
-
-df_benefits=pd.read_csv('benefit_claims_by_coa_aug_2014_edited.csv')
-df_benefits.set_index('OutputArea2011Code',inplace=True)
-
 # Rename the first column of all dataframes 'OutputArea2011Code'
 # Replace '-' values with 0 (so they can be manipulated as numbers)
 
